@@ -23,15 +23,13 @@ public class JsonSimpleParser {
     public Root parse() {
         JSONParser jsonParser = new JSONParser();
 
-        try (FileReader reader = new FileReader("test.json");
+        try (FileReader reader = new FileReader("test.json")
              //FileReader propReader= new FileReader(new File("src/main/resources/application.properties").getAbsolutePath())
              //InputStream is = JsonSimpleParser.class.getResourceAsStream("/application.properties")
              //InputStream is = this.getClass().getClassLoader().getResourceAsStream("application.properties");
         ) {
           /*Properties properties = new Properties();
           properties.load(is);*/ //NullPointerException!!!!!!!!!!!!!
-
-
           JSONObject rootJsonObject= (JSONObject)jsonParser.parse(reader);
 
           String name = (String) rootJsonObject.get("name");
@@ -46,7 +44,6 @@ public class JsonSimpleParser {
                 long age = (Long) peopleJsonObject.get("age");
                 peopleList.add(new People(peopleName, (int)age));
             }
-
 
           root.setName(name);
           root.setPeople(peopleList);
