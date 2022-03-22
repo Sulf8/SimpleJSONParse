@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class JsonParseDemoApplication {
 
     public static void main(String[] args) {
-        //SpringApplication.run(JsonParseDemoApplication.class, args);
-        JsonSimpleParser parser = new JsonSimpleParser();
+        //JsonSimpleParser parser = new JsonSimpleParser();//for parse using SimpleParser lib, change "people_list" to "people" in test.json
+        GsonParser parser = new GsonParser();//for parse using Gson lib
         Root root = parser.parse();
         System.out.println("Root: "+ root.toString());
     }

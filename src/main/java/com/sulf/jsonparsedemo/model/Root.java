@@ -1,9 +1,12 @@
 package com.sulf.jsonparsedemo.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class Root {
     private String name;
+    @SerializedName("people_list")
     private List<People> people;
 
     public String getName() {
